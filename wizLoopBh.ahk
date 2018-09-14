@@ -13,7 +13,7 @@ F5::
 
     ;variables for paragon stats
     mainStat := 45 
-    vitality := 0 
+    vitality := 2 
     maxSpeed := 10
     maxEssence := 5
 
@@ -188,9 +188,8 @@ Loop,
 
 {
 	SendKey:
-	send {2 down}
-	sleep 50
-	send {2 up}
+	send {2}
+
 	send {3 down}
 
  	Loop, 10
@@ -202,7 +201,6 @@ Loop,
 			return
 		}
     	}
-	;sleep 56 
 	send {3 up}
 	send {RButton down}
 	sleep (333+56) 
@@ -216,7 +214,7 @@ Loop,
 		sleep 50
 		send {4 up}
 	 	send {3 down}
-	 	Loop, 7
+	 	Loop, 9
 	    	{
 	        	sleep 100
 			if ($stop)
@@ -229,6 +227,11 @@ Loop,
 	
 	}
 
+	sleep 50
+
+	send {1 down}
+	sleep 50
+	send {1 up}
 	;sleep 50
 if ($stop)
 {
@@ -237,29 +240,32 @@ return
 
 }
 	send {3 down}
-
-	j := 0	
-
-	Loop, 13
-    	{
-		if (j = 2)
-		{
-			send {1 down}
-			sleep 50
-			send {1 up}
-		}
-	       	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-		j := j + 1
+	if (i = 0)
+	{
+	 	Loop, 10
+	    	{
+	        	sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+    		}
 	}
-	sleep 74
-
+	else
+	{
+	 	Loop, 13
+    		{
+	        	sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+	    	}
+		sleep 54
+	}
 	send {3 up}
-	return
 	i := i + 1
 
 }
