@@ -187,7 +187,6 @@ i := 5
 Loop, 
 
 {
-
 	SendKey:
 	send {2 down}
 	sleep 50
@@ -208,19 +207,30 @@ Loop,
 	send {RButton down}
 	sleep (333+56) 
 	send {RButton up}
+	
 	if (i = 5)
 	{
 		i := 0	
+		sleep 100
 		send {4 down}
 		sleep 50
 		send {4 up}
-	}
-	else
-	{
-		sleep 50
+	 	send {3 down}
+	 	Loop, 10
+	    	{
+	        	sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+    		}
+		send {3 up}
+	
 	}
 
-	i := i + 1
+	sleep 50
+
 	send {1 down}
 	sleep 50
 	send {1 up}
@@ -232,17 +242,33 @@ return
 
 }
 	send {3 down}
- 	Loop, 14
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-	sleep 104-50
+	if (i = 0)
+	{
+	 	Loop, 10
+	    	{
+	        	sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+    		}
+	}
+	else
+	{
+	 	Loop, 13
+    		{
+	        	sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+	    	}
+		sleep 74
+	}
 	send {3 up}
+	i := i + 1
 
 }
 
