@@ -216,7 +216,7 @@ Loop,
 		sleep 50
 		send {4 up}
 	 	send {3 down}
-	 	Loop, 10
+	 	Loop, 7
 	    	{
 	        	sleep 100
 			if ($stop)
@@ -229,11 +229,6 @@ Loop,
 	
 	}
 
-	sleep 50
-
-	send {1 down}
-	sleep 50
-	send {1 up}
 	;sleep 50
 if ($stop)
 {
@@ -242,32 +237,29 @@ return
 
 }
 	send {3 down}
-	if (i = 0)
-	{
-	 	Loop, 10
-	    	{
-	        	sleep 100
-			if ($stop)
-			{
-				send {3 up}
-				return
-			}
-    		}
+
+	j := 0	
+
+	Loop, 13
+    	{
+		if (j = 2)
+		{
+			send {1 down}
+			sleep 50
+			send {1 up}
+		}
+	       	sleep 100
+		if ($stop)
+		{
+			send {3 up}
+			return
+		}
+		j := j + 1
 	}
-	else
-	{
-	 	Loop, 13
-    		{
-	        	sleep 100
-			if ($stop)
-			{
-				send {3 up}
-				return
-			}
-	    	}
-		sleep 74
-	}
+	sleep 74
+
 	send {3 up}
+	return
 	i := i + 1
 
 }
