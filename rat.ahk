@@ -22,6 +22,18 @@ $PgDn::
 return
 
 
+F1::
+
+	send {LShift down}
+	send {LButton down}
+	sleep 100
+	Send 2
+	send {LButton up}
+	send {LShift up}
+return
+
+
+
 F11::
 
 $stop := 0

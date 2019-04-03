@@ -178,19 +178,9 @@ $PgDn::
 return
 
 
-F1::
-
-$stop := 0
-
-;i := 5
- 
-Loop, 
-
-{
-
-	SendKey:
+F2::
 	send {2 down}
-	sleep 50
+	sleep 100
 	send {2 up}
 	send {3 down}
 
@@ -206,30 +196,23 @@ Loop,
 	;sleep 56 
 	send {3 up}
 	send {RButton down}
-	sleep (333)+56
+	sleep (333+56) 
 	send {RButton up}
-	;if (i = 5)
-	;{
-	;	i := 0	
-	;	send {4 down}
-	;	sleep 50
-	;	send {4 up}
-	;}
-	;i := i + 1
+	send {1}
 	sleep 50
-	send {1 down}
-	sleep 50
-	send {1 up}
-	;sleep 50
-if ($stop)
-{
 
 return
 
-}
-	send {3 down}
- 	Loop, 14
-	;Loop, 10
+F1::
+
+$stop := 0
+
+
+	send {4}
+	sleep (100) 
+	send {4}
+ 	send {3 down}
+ 	Loop, 10
     	{
         	sleep 100
 		if ($stop)
@@ -238,8 +221,70 @@ return
 			return
 		}
     	}
-	sleep 54
-	;sleep 44
+	send {3 up}
+	send {1 down}
+	sleep 100
+	send {1 up}
+	send {1 down}
+	sleep 100
+	send {1 up}
+	send {3 down}
+
+ 	Loop, 7
+    	{
+        	sleep 100
+		if ($stop)
+		{
+			send {3 up}
+			return
+		}
+    	}
+
+
+	;sleep 56 
+	send {3 up}
+
+Loop, 2
+
+{
+	SendKey:
+	send {2 down}
+	sleep 100
+	send {2 up}
+	send {3 down}
+
+ 	Loop, 9
+    	{
+        	sleep 100
+		if ($stop)
+		{
+			send {3 up}
+			return
+		}
+    	}
+	;sleep 56 
+	send {3 up}
+	send {RButton down}
+	sleep (333+56) 
+	send {RButton up}
+	send {1}
+	sleep 50
+if ($stop)
+{
+
+return
+
+}
+	send {3 down}
+ 	Loop, 14
+    	{
+        	sleep 100
+		if ($stop)
+		{
+			send {3 up}
+			return
+		}
+    	}
 	send {3 up}
 
 }

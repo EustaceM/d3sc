@@ -12,7 +12,7 @@ F5::
 
 
     ;variables for paragon stats
-    mainStat := 45 
+    mainStat := 55 
     vitality := 0 
     maxSpeed := 10
     maxEssence := 5
@@ -89,7 +89,7 @@ F6::
 
     ;variables for paragon stats
     mainStat := 0 
-    vitality := 45 
+    vitality := 55 
     maxSpeed := 10
     maxEssence := 5
 
@@ -183,10 +183,9 @@ F1::
 $stop := 0
 
 
-Loop, 2
+Loop, 1
 
 {
-
 	SendKey:
 	send {2 down}
 	sleep 100

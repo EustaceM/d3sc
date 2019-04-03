@@ -21,35 +21,23 @@ $PgDn::
     }
 return
 
-
 F11::
 
 $stop := 0
 
-Loop,
+Loop, 
 
 {
-
-if(GetKeyState("MButton","P"))
-
-{
-;Send 3
-;Sleep 50
-Send 4
-
-Sleep 50
-}
-
-if(GetKeyState("RButton","P"))
-
-{
-;Send 3
-
 
 Send 4
 
-Sleep 50
-}
+Loop, 10
+
+{
+
+Send 2
+Send 3
+Sleep 400
 
 if ($stop)
 
@@ -58,9 +46,8 @@ if ($stop)
 return
 
 }
+}
 
 }
 
 F12:: $stop := 1
-
-

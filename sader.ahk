@@ -11,7 +11,7 @@ F5::
 
 
     ;variables for paragon stats
-    mainStat := 30 
+    mainStat := 43 
     vitality := 0 
     maxSpeed := 10
     maxEssence := 5
@@ -87,7 +87,7 @@ F6::
 
     ;variables for paragon stats
     mainStat := 0 
-    vitality := 30 
+    vitality := 43 
     maxSpeed := 10
     maxEssence := 5
 
@@ -184,10 +184,26 @@ Loop,
 
 {
 
+if(GetKeyState("MButton","P"))
 
-Send {Numpad4} 
+{
+;Send 2
+Send 3
+;Sleep 50
+Send 4
 
-Sleep 500
+Sleep 50
+}
+
+if(GetKeyState("RButton","P"))
+
+{
+;Send 2
+Send 3
+Send 4
+
+Sleep 50
+}
 
 if ($stop)
 
@@ -200,6 +216,5 @@ return
 }
 
 F12:: $stop := 1
-
 
 

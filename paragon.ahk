@@ -7,12 +7,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 setmousedelay,2 
 
 F5::
-	$stop := 1
     ; Change these values for your set up. For example mainStat=20 is taking 20ms to spend your points in mainStat. Depending on your in game latency you may have to adjust movement speed if it does not spend the points in movement speed. only works with 1920x1080
 
 
     ;variables for paragon stats
-    mainStat := 55 
+    mainStat := 52 
     vitality := 0 
     maxSpeed := 10
     maxEssence := 5
@@ -83,13 +82,12 @@ F5::
 return
 
 F6::
-	$stop := 1
     ; Change these values for your set up. For example mainStat=20 is taking 20ms to spend your points in mainStat. Depending on your in game latency you may have to adjust movement speed if it does not spend the points in movement speed. only works with 1920x1080
 
 
     ;variables for paragon stats
     mainStat := 0 
-    vitality := 55 
+    vitality := 52 
     maxSpeed := 10
     maxEssence := 5
 
@@ -178,73 +176,45 @@ $PgDn::
 return
 
 
-F1::
+F11::
 
 $stop := 0
 
-;i := 5
- 
-Loop, 
+Loop,
 
 {
 
-	SendKey:
-	send {2 down}
-	sleep 50
-	send {2 up}
-	send {3 down}
+if(GetKeyState("MButton","P"))
 
- 	Loop, 10
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-	;sleep 56 
-	send {3 up}
-	send {RButton down}
-	sleep (333)+56
-	send {RButton up}
-	;if (i = 5)
-	;{
-	;	i := 0	
-	;	send {4 down}
-	;	sleep 50
-	;	send {4 up}
-	;}
-	;i := i + 1
-	sleep 50
-	send {1 down}
-	sleep 50
-	send {1 up}
-	;sleep 50
+{
+;Send 3
+;Sleep 50
+Send 4
+
+Sleep 50
+}
+
+if(GetKeyState("RButton","P"))
+
+{
+;Send 3
+
+
+Send 4
+
+Sleep 50
+}
+
 if ($stop)
+
 {
 
 return
 
 }
-	send {3 down}
- 	Loop, 14
-	;Loop, 10
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-	sleep 54
-	;sleep 44
-	send {3 up}
 
 }
 
-F4:: $stop := 1
-
+F12:: $stop := 1
 
 

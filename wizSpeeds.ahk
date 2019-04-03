@@ -4,6 +4,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+
 #IfWinActive, Diablo III
 $PgUp::
  While GetKeyState("PgUp", "p") { ; While it is held down
@@ -22,45 +23,57 @@ $PgDn::
 return
 
 
-F11::
+F1::
 
 $stop := 0
 
-Loop,
+
+Loop, 1
 
 {
+	SendKey:
+	send {2 down}
+	sleep 100
+	send {2 up}
+	send {3 down}
 
-if(GetKeyState("MButton","P"))
-
-{
-;Send 3
-;Sleep 50
-Send 4
-
-Sleep 50
-}
-
-if(GetKeyState("RButton","P"))
-
-{
-;Send 3
-
-
-Send 4
-
-Sleep 50
-}
-
+ 	Loop, 10
+    	{
+        	sleep 100
+		if ($stop)
+		{
+			send {3 up}
+			return
+		}
+    	}
+	;sleep 56 
+	send {3 up}
+	send {RButton down}
+	sleep (333+56) 
+	send {RButton up}
+	;send {1}
+	sleep 50
 if ($stop)
-
 {
 
 return
 
 }
+	send {3 down}
+ 	Loop, 17
+    	{
+        	sleep 100
+		if ($stop)
+		{
+			send {3 up}
+			return
+		}
+    	}
+	send {3 up}
 
 }
 
-F12:: $stop := 1
+F4:: $stop := 1
+
 
 
