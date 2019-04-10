@@ -49,7 +49,7 @@ Loop,
 		send {1 up}
 		send {3 down}
 
- 		Loop, 12
+ 		Loop, 22
     		{
         		sleep 100
 			if ($stop)
@@ -159,26 +159,16 @@ Loop,
 		send {RButton down}
 		sleep (333+56) 
 		send {RButton up}
-		Loop, 2
+
+		Loop, 19
 		{
-			;send {RButton}
-			Loop, 10
+			sleep 100
+			if ($stop)
 			{
-				sleep 100
-				if ($stop)
-				{
-					return
-				}
+				return
 			}
 		}
-		Loop, 9
-			{
-				sleep 100
-				if ($stop)
-				{
-					return
-				}
-			}
+
 		sleep 11
 	
 	}
@@ -195,15 +185,13 @@ Loop,
 				}
 			}
 		}
-		send {RButton}
-		sleep 100
 	}
 	;$ocu := 0
 }
 
 return
 
-F3::
+F5::
 
 $stop := 0
 
@@ -269,6 +257,11 @@ return
 F2::
 
 $ocu := 1
+return
+
+F3::
+
+$ocu := 0
 return
 
 
