@@ -85,10 +85,11 @@ Loop,
 				return
 			}
     		}
+		send {3 up}
 		;sleep 180
 		sleep 133-46
 		;sleep 97+20+50
-		send {3 up}
+
 		send {RButton down}
 		sleep (120+46) 
 		;send {1}
@@ -118,10 +119,7 @@ Loop,
 	}
 	if ($ocu)
 	{
-		send {1 down}
-		sleep 100
-		send {1 up}
-	 	Loop, 13
+	 	Loop, 6
 	    	{
 	        	sleep 100
 			if ($stop)
@@ -129,6 +127,21 @@ Loop,
 				return
 			}
 	    	}
+		send {4}
+		sleep (100) 
+		send {4}
+ 		Loop, 6
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+    		}
+		send {1 down}
+		sleep 100
+		send {1 up}
 		send {3 down}
 
  		Loop, 12
@@ -140,6 +153,7 @@ Loop,
 				return
 			}
     		}
+		send {3 up}
 		send {2 down}
 		sleep 100
 		send {2 up}

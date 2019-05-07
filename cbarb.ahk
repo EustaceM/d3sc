@@ -21,7 +21,7 @@ $PgDn::
     }
 return
 
-F11::
+F1::
 
 $stop := 0
 
@@ -29,14 +29,14 @@ Loop,
 
 {
 
-Send 4
+Send 3
 
 Loop, 10
 
 {
 
 Send 2
-Send 3
+Send 4
 Sleep 400
 
 if ($stop)

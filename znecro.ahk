@@ -58,8 +58,11 @@ if ($stop)
 return
 
 }
+Sleep 50
 
 }
+
+return
 
 F12:: $stop := 1
 
