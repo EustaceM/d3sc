@@ -49,7 +49,7 @@ Loop,
 		send {1 up}
 		send {3 down}
 
- 		Loop, 22
+ 		Loop, 17
     		{
         		sleep 100
 			if ($stop)
@@ -59,10 +59,18 @@ Loop,
 			}
     		}
 
-
 		;sleep 56 
 		send {3 up}
-
+ 		Loop, 5
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+    		}
+		return
 
 	Loop, 1
 
@@ -71,7 +79,7 @@ Loop,
 		send {2 down}
 		sleep 100
 		send {2 up}
-		;send {3 down}
+		send {3 down}
 
 		;sleep 1033
 		;Loop, 7
@@ -85,7 +93,7 @@ Loop,
 				return
 			}
     		}
-		;send {3 up}
+		send {3 up}
 		;sleep 180
 		sleep 133-46
 		;sleep 97+20+50
@@ -139,6 +147,7 @@ Loop,
 				return
 			}
     		}
+		sleep 236
 		send {1 down}
 		sleep 100
 		send {1 up}
@@ -154,24 +163,28 @@ Loop,
 			}
     		}
 		send {3 up}
+
+
 		send {2 down}
 		sleep 100
 		send {2 up}
 		send {3 down}
 
-	 	Loop, 10
-	    	{
-	        	sleep 100
+ 		Loop, 8
+    		{
+        		sleep 100
 			if ($stop)
 			{
 				send {3 up}
 				return
 			}
-	    	}
-		;sleep 56 
+    		}
 		send {3 up}
+		sleep 133-46
+
 		send {RButton down}
-		sleep (333+56) 
+		sleep (120+46) 
+		sleep 100
 		send {RButton up}
 
 		Loop, 19

@@ -37,7 +37,7 @@ Loop, 10
 
 Send 2
 Send 4
-Sleep 400
+Sleep 200
 
 if ($stop)
 

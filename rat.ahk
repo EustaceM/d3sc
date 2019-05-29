@@ -41,6 +41,7 @@ $stop := 0
 Loop,
 
 {
+Sleep 50
 
 if(GetKeyState("MButton","P"))
 
