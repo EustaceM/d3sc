@@ -27,26 +27,10 @@ return
 
 F1::
 
+
 $stop := 0
-		send {1 down}
-		sleep 100
-		send {1 up}
 Loop, 
 {
-		;send {4}
-		sleep (100) 
-		;send {4}
- 		;send {3 down}
- 		Loop, 6
-    		{
-        		sleep 100
-			if ($stop)
-			{
-				;send {3 up}
-				return
-			}
-    		}
-		;send {3 up}
 		send {3 down}
 
  		Loop, 22
@@ -60,10 +44,20 @@ Loop,
     		}
 
 
-		;sleep 56 
 		send {3 up}
-
-
+		send {1 down}
+		sleep 100
+		send {1 up}
+		SoundPlay, small_be.wav
+		sleep (100) 
+ 		Loop, 17
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				return
+			}
+    		}
 	Loop, 1
 
 	{
@@ -119,20 +113,16 @@ Loop,
 	}
 	if ($ocu)
 	{
-		;send {RButton down}
-		send {1 down}
+		send {1}
 	 	Loop, 26
 	    	{
 	        	sleep 100
-			send {1}
 			if ($stop)
 			{
-				;send {RButton up}
-				send {1 up}
+				send {1}
 				return
 			}
 	    	}
-		send {1 up}
 		;send {RButton up}
 		sleep 36
 		send {1 down}
@@ -172,27 +162,16 @@ Loop,
 		sleep (120+46) 
 		sleep 100
 		send {RButton up}
-		send {1 down}
-		sleep 100
-		send {1 up}
-
-		Loop, 10
-		{
-			sleep 100
-			if ($stop)
-			{
-				return
-			}
-		}
 
 		sleep 11
 	
 	}
 	else {
-		Loop, 40
+		Loop, 50
 		{
 
-			send {RButton}
+
+			send {1}
 			sleep 100
 			if ($stop)
 			{
@@ -200,85 +179,10 @@ Loop,
 			}
 
 		}
-		Loop, 20
-		{
-			sleep 100
-			if ($stop)
-			{
-				return
-			}
-
-		}
-		send {1 down}
-		sleep 100
-		send {1 up}
 	}
 	;$ocu := 0
 }
 
-return
-
-F5::
-
-$stop := 0
-
-
-	send {4}
-	sleep (100) 
-	send {4}
- 	;send {3 down}
- 	Loop, 7
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-	;send {3 up}
-	send {1 down}
-	sleep 100
-	send {1 up}
-	send {3 down}
-
- 	Loop, 12
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-
-
-	;sleep 56 
-	send {3 up}
-
-Loop, 1
-
-{
-	send {2 down}
-	sleep 100
-	send {2 up}
-	send {3 down}
-
- 	Loop, 10
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-	;sleep 56 
-	send {3 up}
-	send {RButton down}
-	sleep (333+56) 
-	send {RButton up}
-}
 return
 
 F2::

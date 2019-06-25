@@ -67,37 +67,25 @@ Loop,
 	Loop, 1
 
 	{
-		send {LShift down}
+		;1287
 		send {2 down}
 		sleep 100
 		send {2 up}
-		send {3 down}
 
-		;sleep 1033
-		;Loop, 7
-
- 		Loop, 8
+ 		Loop, 10
     		{
         		sleep 100
 			if ($stop)
 			{
-				send {3 up}
 				return
 			}
     		}
-		send {3 up}
-		;sleep 180
-		sleep 133-46
-		;sleep 97+20+50
+		sleep 66
 
-		send {RButton down}
-		sleep (120+46) 
-		;send {1}
-		;sleep 50
+		send {RButton}
+		send {LShift down}
 		send {LButton down}
-		sleep 100
-		send {RButton up}
-		sleep 200
+		sleep 120
 		send {LButton up}
 		send {LShift up}
 		if ($stop)
