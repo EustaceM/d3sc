@@ -6,6 +6,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #IfWinActive, Diablo III
 $PgUp::
+$stop := 1
  While GetKeyState("PgUp", "p") { ; While it is held down
         MouseClick Left
         Sleep 50
@@ -15,6 +16,7 @@ return
 
 #IfWinActive, Diablo III
 $PgDn::
+$stop := 1
  While GetKeyState("PgDn", "p") { ; While it is held down
         MouseClick Right
         Sleep 50

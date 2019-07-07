@@ -36,9 +36,9 @@ F1::
 $stop := 0
 
 
-	;send {1 down}
-	;sleep 100
-	;send {1 up}
+	send {1 down}
+	sleep 100
+	send {1 up}
 	send {3 down}
 
  	Loop, 12
@@ -59,40 +59,34 @@ $stop := 0
 Loop, 1
 
 {
-	send {LShift down}
-	send {2 down}
-	sleep 100
-	send {2 up}
-	send {3 down}
 
-	;sleep 1033
-	;Loop, 7
+		;1287
+		send {2 down}
+		sleep 100
+		send {2 up}
 
- 	Loop, 8
-    	{
-        	sleep 100
+ 		Loop, 10
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				return
+			}
+    		}
+		sleep 53
+
+		send {RButton}
+		send {LShift down}
+		send {LButton down}
+		sleep 120
+		send {LButton up}
+		send {LShift up}
 		if ($stop)
 		{
-			send {3 up}
 			return
 		}
-    	}
-	;sleep 180
-	sleep 133-46
-	;sleep 97+20+50
-	send {3 up}
-	send {RButton down}
-	sleep (120+46) 
-	;send {1}
-	;sleep 50
-	send {RButton up}
-	send {LButton down}
-	;send {MButton down}
-	sleep 100
-	send {LButton up}
-	;sleep 200
-	;send {MButton up}
-	send {LShift up}
+
+
 if ($stop)
 {
 
