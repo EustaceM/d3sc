@@ -37,7 +37,7 @@ Loop,
 
 		send {3 down}
 
- 		Loop, 23
+ 		Loop, 28
     		{
         		sleep 100
 			if ($stop)
@@ -51,7 +51,7 @@ Loop,
 		send {3 up}
 		SoundPlay, gongL.wav
 
- 		Loop, 20
+ 		Loop, 24
     		{
         		sleep 100
 			if ($stop)
@@ -71,7 +71,7 @@ Loop,
 		send {3 down}
 
 
- 		Loop, 9
+ 		Loop, 8
     		{
         		sleep 100
 			if ($stop)
@@ -85,7 +85,7 @@ Loop,
 
 
 		send {RButton down}
-		sleep (20+46) 
+		sleep (120+46) 
 
 		send {LButton down}
 		sleep 100
@@ -113,7 +113,7 @@ Loop,
 	if ($ocu)
 	{
 		send {RButton down}
-	 	Loop, 22 ;26
+	 	Loop, 12 ;26
 	    	{
 	        	sleep 100
 			send {1}
@@ -143,9 +143,10 @@ Loop,
 		send {2 down}
 		sleep 100
 		send {2 up}
+
 		send {3 down}
 
- 		Loop, 8
+ 		Loop, 9
     		{
         		sleep 100
 			if ($stop)
@@ -162,13 +163,12 @@ Loop,
 		sleep 100
 		send {RButton up}
 
-
 		sleep 11
 	
 	}
 	else {
 		send {RButton down}
-	 	Loop, 30
+	 	Loop, 20
 	    	{
 	        	sleep 100
 			send {1}
