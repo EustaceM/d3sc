@@ -31,6 +31,7 @@ $stop := 0
 
 Loop, 
 {
+		send {4}
  		Loop, 8
     		{
         		sleep 100
@@ -165,7 +166,7 @@ Loop,
 	}
 	else {
 		send {RButton down}
-	 	Loop, 30
+	 	Loop, 34
 	    	{
 	        	sleep 100
 			send {1}
@@ -177,7 +178,7 @@ Loop,
 	    	}
 		send {RButton up}
 
-		Loop, 24
+		Loop, 20
 		{
 			sleep 100
 			if ($stop)

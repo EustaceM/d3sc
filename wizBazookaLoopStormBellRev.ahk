@@ -63,10 +63,15 @@ Loop,
 
 	{
 		send {LShift down}
-		send {2 down}
+		send {2}
 		SoundPlay, gongL.wav
+		;MouseGetPos, xpos, ypos 
+		;MsgBox, The cursor is at X%xpos% Y%ypos%. 
+		;xpos := 960+(960-xpos)
+		;ypos := 500+(500-ypos)
+		
+		;MouseMove,  xpos, ypos
 		sleep 100
-		send {2 up}
 
 
  		Loop, 9
@@ -78,11 +83,11 @@ Loop,
 				return
 			}
     		}
-		sleep 133-46
+		sleep 166
 
 
 		send {RButton down}
-		sleep (20+46) 
+		;sleep (20+46) 
 
 		send {LButton down}
 		sleep 100
