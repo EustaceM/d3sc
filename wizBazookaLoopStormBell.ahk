@@ -36,7 +36,7 @@ Loop,
 		send {1 up}
 
 		send {3 down}
-
+		send {Numpad1}
  		Loop, 23
     		{
         		sleep 100
@@ -110,6 +110,7 @@ Loop,
 			}
 		}
 	}
+	send {Numpad2}
 	if ($ocu)
 	{
 		send {RButton down}

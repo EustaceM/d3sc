@@ -32,7 +32,8 @@ $stop := 0
 Loop, 
 {
 		send {3 down}
- 		Loop, 10
+
+ 		Loop, 7
     		{
         		sleep 100
 			if ($stop)
@@ -43,26 +44,25 @@ Loop,
     		}
 
 		send {3 up}
-
 		send {RButton down}
-		sleep 200
+	 	Loop, 4 
+	    	{
+	        	sleep 100
+			send {1}
+			if ($stop)
+			{
+				send {RButton up}
+				return
+			}
+	    	}
 		send {RButton up}
 		send {1 down}
 		sleep 100
 		send {1 up}
-		SoundPlay, gongL.wav
 
-		Loop, 20 
-		{
-			sleep 100
-			if ($stop)
-			{
-				return
-			}
-		}
 		send {3 down}
 
- 		Loop, 12
+ 		Loop, 16
     		{
         		sleep 100
 			if ($stop)
@@ -73,6 +73,18 @@ Loop,
     		}
 
 		send {3 up}
+		
+		
+		SoundPlay, gongL.wav
+
+ 		Loop, 17
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				return
+			}
+    		}
 
 
 	Loop, 1
@@ -85,7 +97,7 @@ Loop,
 		send {3 down}
 
 
- 		Loop, 9
+ 		Loop, 8
     		{
         		sleep 100
 			if ($stop)
@@ -97,8 +109,10 @@ Loop,
 		send {3 up}
 		sleep 133-46
 
+
 		send {RButton down}
-		sleep (20+46) 
+		sleep (120+46) 
+
 		send {LButton down}
 		sleep 100
 		send {RButton up}
@@ -125,7 +139,7 @@ Loop,
 	if ($ocu)
 	{
 		send {RButton down}
-	 	Loop, 21 ;26
+	 	Loop, 20 ;26
 	    	{
 	        	sleep 100
 			send {1}
@@ -141,7 +155,6 @@ Loop,
 		sleep 100
 		send {1 up}
 		send {3 down}
-		
  		Loop, 10
     		{
         		sleep 100
@@ -156,22 +169,22 @@ Loop,
 		send {2 down}
 		sleep 100
 		send {2 up}
-		;send {3 down}
+		send {3 down}
 
- 		Loop, 9
+ 		Loop, 8
     		{
         		sleep 100
 			if ($stop)
 			{
-				;send {3 up}
+				send {3 up}
 				return
 			}
     		}
-		;send {3 up}
+		send {3 up}
 		sleep 133-46
 
 		send {RButton down}
-		sleep (20+46) 
+		sleep (120+46) 
 		sleep 100
 		send {RButton up}
 
@@ -180,10 +193,21 @@ Loop,
 	
 	}
 	else {
-		Loop, 40
-		{
+		send {RButton down}
+	 	Loop, 26
+	    	{
+	        	sleep 100
+			send {1}
+			if ($stop)
+			{
+				send {RButton up}
+				return
+			}
+	    	}
+		send {RButton up}
 
-			send {RButton}
+		Loop, 17
+		{
 			sleep 100
 			if ($stop)
 			{
@@ -191,83 +215,13 @@ Loop,
 			}
 
 		}
-		Loop, 5
-		{
-			sleep 100
-			if ($stop)
-			{
-				return
-			}
-
-		}
+		sleep 100
 	}
 	;$ocu := 0
 }
 
 return
 
-F5::
-
-$stop := 0
-
-
-	send {4}
-	sleep (100) 
-	send {4}
- 	;send {3 down}
- 	Loop, 7
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-	;send {3 up}
-	send {1 down}
-	sleep 100
-	send {1 up}
-	send {3 down}
-
- 	Loop, 12
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-
-
-	;sleep 56 
-	send {3 up}
-
-Loop, 1
-
-{
-	send {2 down}
-	sleep 100
-	send {2 up}
-	send {3 down}
-
- 	Loop, 10
-    	{
-        	sleep 100
-		if ($stop)
-		{
-			send {3 up}
-			return
-		}
-    	}
-	;sleep 56 
-	send {3 up}
-	send {RButton down}
-	sleep (333+56) 
-	send {RButton up}
-}
-return
 
 F2::
 
