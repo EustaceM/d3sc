@@ -6,7 +6,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #IfWinActive, Diablo III
 $PgUp::
-	$stop := 1
  While GetKeyState("PgUp", "p") { ; While it is held down
         MouseClick Left
         Sleep 50
@@ -16,19 +15,10 @@ return
 
 #IfWinActive, Diablo III
 $PgDn::
-	$stop := 1
  While GetKeyState("PgDn", "p") { ; While it is held down
         MouseClick Right
         Sleep 50
     }
-return
-
-$~t::
-$stop := 1
-return
-
-$~y::
-$stop := 1
 return
 
 
@@ -48,50 +38,42 @@ F11::
 
 $stop := 0
 
-;3B6894
-
 Loop,
 
 {
-	;PixelGetColor, c1, 1679, 8
-	;PixelGetColor, c2, 1679, 18
-	;MsgBox %c1% %c2%.
-	;if (c1=0xF5F5F5 and c2=0xF5F5F5)
-	;{
-	;	$state := 1
-	;}
-	;else if (c1=0x08080B and c2=0x0A0A0D) 
-	;{
-	;	$state := 1
-	;}
-	;else 
-	;{
-	;	$state := 0
-	;}
+Sleep 50
+
+if(GetKeyState("MButton","P"))
+
+{
+;Send 3
+;Sleep 50
+Send 4
+
+Sleep 50
+}
+
+if(GetKeyState("RButton","P"))
+
+{
+;Send 3
 
 
-	Loop, 10
+Send 4
 
-	{
-		Sleep 50
+Sleep 50
+}
 
-		Send 4
+if ($stop)
 
-		Sleep 50
+{
 
+return
 
-		if ($stop)
+}
 
-		{
+}
 
-			return
-
-		}
-
-		}
-	}
-
-
-F12:: reload
+F12:: $stop := 1
 
 
