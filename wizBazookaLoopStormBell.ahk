@@ -140,7 +140,7 @@ Loop,
 			}
     		}
 		send {3 up}
-
+		sleep 100
 		send {2 down}
 		sleep 100
 		send {2 up}
@@ -160,7 +160,6 @@ Loop,
 
 		send {RButton down}
 		sleep (120+46) 
-		sleep 100
 		send {RButton up}
 
 
