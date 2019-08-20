@@ -28,8 +28,21 @@ return
 F1::
 
 $stop := 0
+
 Loop, 
 {
+		send {3 down}
+		Loop, 10
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				send {3 up}
+				return
+			}
+    		}
+		send {3 up}
+
 		send {4}
 		sleep (100) 
 		send {4}
@@ -39,7 +52,7 @@ Loop,
         		sleep 100
 			if ($stop)
 			{
-				send {3 up}
+				;send {3 up}
 				return
 			}
     		}
@@ -49,7 +62,7 @@ Loop,
 		send {1 up}
 		send {3 down}
 
- 		Loop, 22
+ 		Loop, 8
     		{
         		sleep 100
 			if ($stop)
@@ -58,9 +71,20 @@ Loop,
 				return
 			}
     		}
+		send {3 up}
+
+		SoundPlay, gongL.wav
+
+ 		Loop, 17
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				return
+			}
+    		}
 
 
-		;sleep 56 
 		send {3 up}
 
 
@@ -73,9 +97,6 @@ Loop,
 		send {2 up}
 		send {3 down}
 
-		;sleep 1033
-		;Loop, 7
-
  		Loop, 8
     		{
         		sleep 100
@@ -86,14 +107,12 @@ Loop,
 			}
     		}
 		send {3 up}
-		;sleep 180
+
 		sleep 133-46
-		;sleep 97+20+50
+
 
 		send {RButton down}
 		sleep (120+46) 
-		;send {1}
-		;sleep 50
 		send {LButton down}
 		sleep 100
 		send {RButton up}
@@ -119,7 +138,7 @@ Loop,
 	}
 	if ($ocu)
 	{
-	 	Loop, 6
+	 	Loop, 11
 	    	{
 	        	sleep 100
 			if ($stop)
@@ -127,25 +146,16 @@ Loop,
 				return
 			}
 	    	}
-		send {4}
+		;send {4}
 		sleep (100) 
-		send {4}
- 		Loop, 6
-    		{
-        		sleep 100
-			if ($stop)
-			{
-				send {3 up}
-				return
-			}
-    		}
-		sleep 236
+		;send {4}
+		sleep 36
 		send {1 down}
 		sleep 100
 		send {1 up}
 		send {3 down}
 
- 		Loop, 12
+ 		Loop, 16
     		{
         		sleep 100
 			if ($stop)
@@ -160,9 +170,41 @@ Loop,
 		send {2 down}
 		sleep 100
 		send {2 up}
-		send {3 down}
+		;send {3 down}
 
  		Loop, 8
+    		{
+        		sleep 100
+			if ($stop)
+			{
+				;send {3 up}
+				return
+			}
+    		}
+		;send {3 up}
+		sleep 133-46
+
+		send {RButton down}
+		sleep (120+46) 
+		sleep 100
+		send {RButton up}
+		sleep 600
+		sleep 11
+	
+	}
+	else {
+		send {1}
+		Loop, 20
+		{
+			sleep 100
+			if ($stop)
+			{
+				return
+			}
+		}
+
+		send {3 down}
+		Loop, 12
     		{
         		sleep 100
 			if ($stop)
@@ -172,56 +214,13 @@ Loop,
 			}
     		}
 		send {3 up}
-		sleep 133-46
-
-		send {RButton down}
-		sleep (120+46) 
-		sleep 100
-		send {RButton up}
-
-		;send {2 down}
-		;sleep 100
-		;send {2 up}
-		;send {3 down}
-
-	 	;Loop, 10
-	    	;{
-	        ;	sleep 100
-		;	if ($stop)
-		;	{
-		;		send {3 up}
-		;		return
-		;	}
-	    	;}
-		;;sleep 56 
-		;send {3 up}
-		;send {RButton down}
-		;sleep (333+56) 
-		;send {RButton up}
-
-		Loop, 19
+		send {1}
+		Loop, 14
 		{
 			sleep 100
 			if ($stop)
 			{
 				return
-			}
-		}
-
-		sleep 11
-	
-	}
-	else {
-		Loop, 3
-		{
-			send {RButton}
-			Loop, 20
-			{
-				sleep 100
-				if ($stop)
-				{
-					return
-				}
 			}
 		}
 	}

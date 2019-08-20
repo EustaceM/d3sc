@@ -24,7 +24,6 @@ $PgDn::
     }
 return
 
-
 F1::
 
 $stop := 0
@@ -37,7 +36,7 @@ Loop,
 
 		send {3 down}
 		;send {Numpad1}
- 		Loop, 17
+ 		Loop, 16
     		{
         		sleep 100
 			if ($stop)
@@ -51,7 +50,7 @@ Loop,
 		send {3 up}
 		SoundPlay, gongL.wav
 
- 		Loop, 20
+ 		Loop, 19
     		{
         		sleep 100
 			if ($stop)
@@ -114,7 +113,7 @@ Loop,
 	if ($ocu)
 	{
 		send {RButton down}
-	 	Loop, 17 ;26
+	 	Loop, 18 ;26
 	    	{
 	        	sleep 100
 			send {1}
@@ -139,6 +138,7 @@ Loop,
 				return
 			}
     		}
+		sleep 100
 		send {3 up}
 		send {2 down}
 		sleep 100
@@ -190,7 +190,7 @@ Loop,
 	    	}
 		send {RButton up}
 
-		Loop, 20
+		Loop, 22
 		{
 			sleep 100
 			if ($stop)
