@@ -30,27 +30,30 @@ $stop := 0
 
 Loop, 
 {
-		send {1 down}
-		sleep 100
-		send {1 up}		
-
-		send {3 down}
-		;send {Numpad1}
- 		Loop, 16
+		send {3}
+		sleep (100) 
+		send {3}
+		send {RButton down}
+ 		Loop, 15
     		{
         		sleep 100
 			if ($stop)
 			{
-				send {3 up}
+				send {RButton up}
 				return
 			}
     		}
+		send {RButton up}
+		
+		sleep 200
 
+		send {1 down}
+		sleep 100
+		send {1 up}		
 
-		send {3 up}
 		SoundPlay, gongL.wav
 
- 		Loop, 19
+ 		Loop, 17
     		{
         		sleep 100
 			if ($stop)
@@ -67,19 +70,16 @@ Loop,
 		send {2 down}
 		sleep 100
 		send {2 up}
-		send {3 down}
-
-
  		Loop, 8
     		{
         		sleep 100
 			if ($stop)
 			{
-				send {3 up}
+
 				return
 			}
     		}
-		send {3 up}
+
 		sleep 133-46
 
 
@@ -109,11 +109,11 @@ Loop,
 			}
 		}
 	}
-	;send {Numpad2}
+
 	if ($ocu)
 	{
 		send {RButton down}
-	 	Loop, 18 ;26
+	 	Loop, 35 
 	    	{
 	        	sleep 100
 			send {1}
@@ -124,61 +124,40 @@ Loop,
 			}
 	    	}
 		send {RButton up}
-		sleep 36
+		sleep 236
 		send {1 down}
 		sleep 100
 		send {1 up}
-		send {3 down}
- 		Loop, 12
-    		{
-        		sleep 100
-			if ($stop)
-			{
-				send {3 up}
-				return
-			}
-    		}
-		sleep 100
-		send {3 up}
+
 		send {2 down}
 		sleep 100
 		send {2 up}
-		send {3 down}
+
 
  		Loop, 8
     		{
         		sleep 100
 			if ($stop)
 			{
-				send {3 up}
+				
 				return
 			}
     		}
-		send {3 up}
+
 		sleep 133-46
 
-		;send {RButton down}
-		;sleep (120+46) 
-		;send {RButton up}
-		;sleep 300
 		send {RButton down}
-	 	Loop, 9 
-	    	{
-	        	sleep 100
-			if ($stop)
-			{
-				send {RButton up}
-				return
-			}
-	    	}
+	 	sleep 100
 		sleep (120+46) 
 		send {RButton up}
-		sleep 11
-	
+		sleep 111
+		send {1 down}
+		sleep 100
+		send {1 up}
 	}
 	else {
 		send {RButton down}
-	 	Loop, 30
+	 	Loop, 50
 	    	{
 	        	sleep 100
 			send {1}
@@ -190,7 +169,7 @@ Loop,
 	    	}
 		send {RButton up}
 
-		Loop, 22
+		Loop, 2
 		{
 			sleep 100
 			if ($stop)
