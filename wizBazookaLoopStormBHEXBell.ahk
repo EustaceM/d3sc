@@ -44,8 +44,6 @@ Loop,
 			}
     		}
 		send {RButton up}
-		
-		sleep 200
 
 		send {1 down}
 		sleep 100
@@ -124,16 +122,17 @@ Loop,
 			}
 	    	}
 		send {RButton up}
-		sleep 236
+		sleep 136
 		send {1 down}
 		sleep 100
 		send {1 up}
-
+		send {1 down}
+		sleep 100
+		send {1 up}
+		sleep 200
 		send {2 down}
 		sleep 100
 		send {2 up}
-
-
  		Loop, 8
     		{
         		sleep 100
@@ -169,7 +168,7 @@ Loop,
 	    	}
 		send {RButton up}
 
-		Loop, 2
+		Loop, 5
 		{
 			sleep 100
 			if ($stop)
@@ -178,7 +177,6 @@ Loop,
 			}
 
 		}
-		sleep 100
 	}
 	;$ocu := 0
 }

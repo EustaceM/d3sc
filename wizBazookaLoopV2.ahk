@@ -182,6 +182,9 @@ Loop,
 			}
     		}
 		;send {3 up}
+		
+		MouseMove,  960+500, 500
+		
 		sleep 133-46
 
 		send {RButton down}
@@ -189,6 +192,7 @@ Loop,
 		sleep 100
 		send {RButton up}
 		sleep 600
+		MouseMove,  960, 500
 		sleep 11
 	
 	}
