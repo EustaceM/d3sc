@@ -26,19 +26,7 @@ return
 
 F1::
 
-		$stop := 0
-		send {3 down}
- 		Loop, 5
-    		{
-        		sleep 100
-			if ($stop)
-			{
-				send {3 up}
-				return
-			}
-    		}
-		send {3 up}
-
+$stop := 0
 
 Loop, 
 {
@@ -47,7 +35,8 @@ Loop,
 		send {1 up}		
 
 		send {3 down}
- 		Loop, 13
+		;send {Numpad1}
+ 		Loop, 17
     		{
         		sleep 100
 			if ($stop)
@@ -56,6 +45,8 @@ Loop,
 				return
 			}
     		}
+
+
 		send {3 up}
 		SoundPlay, gongL.wav
 
@@ -122,7 +113,7 @@ Loop,
 	if ($ocu)
 	{
 		send {RButton down}
-	 	Loop, 19 ;26
+	 	Loop, 17 ;26
 	    	{
 	        	sleep 100
 			send {1}
@@ -138,7 +129,7 @@ Loop,
 		sleep 100
 		send {1 up}
 		send {3 down}
- 		Loop, 14
+ 		Loop, 13
     		{
         		sleep 100
 			if ($stop)
@@ -154,7 +145,7 @@ Loop,
 		send {2 up}
 		send {3 down}
 
- 		Loop, 9
+ 		Loop, 8
     		{
         		sleep 100
 			if ($stop)
@@ -171,7 +162,7 @@ Loop,
 		;send {RButton up}
 		;sleep 300
 		send {RButton down}
-	 	Loop, 9
+	 	Loop, 9 
 	    	{
 	        	sleep 100
 			if ($stop)
@@ -187,7 +178,7 @@ Loop,
 	}
 	else {
 		send {RButton down}
-	 	Loop, 37
+	 	Loop, 52
 	    	{
 	        	sleep 100
 			send {1}
@@ -199,15 +190,15 @@ Loop,
 	    	}
 		send {RButton up}
 
-		Loop, 19
-		{
-			sleep 100
-			if ($stop)
-			{
-				return
-			}
+		;Loop, 22
+		;{
+		;	sleep 100
+		;	if ($stop)
+		;	{
+		;		return
+		;	}
 
-		}
+		;}
 		sleep 100
 	}
 	;$ocu := 0
