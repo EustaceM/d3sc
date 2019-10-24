@@ -3,6 +3,8 @@
 #MaxThreadsPerHotkey 2
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+SetControlDelay -1
+
 
 #IfWinActive, Diablo III
 $PgUp::
@@ -74,6 +76,17 @@ return
 
 }
 
+F9::
+	ControlClick, , Diablo III,, Middle , 1, NA x920 y507
+	DllCall("Sleep","UInt",115)
+	ControlClick,, Diablo III,, Middle , 1, NA x1000 y507
+	DllCall("Sleep","UInt",115)
+
+return
+
+
 F12:: $stop := 1
+
+
 
 
