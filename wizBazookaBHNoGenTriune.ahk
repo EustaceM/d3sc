@@ -186,7 +186,7 @@ Loop,
 	
 	}
 	else {
-		return
+		;return
 		$cycleCount := (52 + 11)
 		if ($shift = 1)
 		{

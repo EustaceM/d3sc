@@ -27,6 +27,8 @@ return
 F1::
 
 $stop := 0
+$shift := 0
+$shiftCount := 0
 
 Loop, 
 {
@@ -84,10 +86,11 @@ Loop,
 
 
 		send {RButton down}
-		sleep (220+46) 
-		sleep 100
-		send {LButton down}
+		sleep (120+46) 
+
 		send {RButton up}
+		sleep 300
+		send {LButton down}
 		sleep 100
 		send {LButton up}
 		send {LShift up}
@@ -98,7 +101,7 @@ Loop,
 	}
 	Loop, 19
 	{
-		send 1
+		;send 1
 		Loop, 10
 		{
 			sleep 100
@@ -176,8 +179,21 @@ Loop,
 	
 	}
 	else {
+		return
+		$cycleCount := 52
+		if ($shift = 1)
+		{
+			$cycleCount := $cycleCount + 15
+			$shift := 0
+			$shiftCount:=$shiftCount+1
+		}
+		else if ($shiftCount > 0)
+		{	
+			$cycleCount := $cycleCount - (15 * $shiftCount)
+			$shiftCount :=0
+		}
 		send {RButton down}
-	 	Loop, 52
+	 	Loop, %$cycleCount%
 	    	{
 	        	sleep 100
 			send {1}
@@ -189,15 +205,7 @@ Loop,
 	    	}
 		send {RButton up}
 
-		;Loop, 22
-		;{
-		;	sleep 100
-		;	if ($stop)
-		;	{
-		;		return
-		;	}
 
-		;}
 		sleep 100
 	}
 	;$ocu := 0
@@ -218,6 +226,8 @@ return
 
 
 F4:: $stop := 1
+return
 
-
+F5:: $shift := 1
+return
 

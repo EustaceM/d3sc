@@ -27,8 +27,9 @@ return
 F1::
 
 		$stop := 0
+
 		send {3 down}
- 		Loop, 5
+ 		Loop, 6
     		{
         		sleep 100
 			if ($stop)
@@ -38,11 +39,6 @@ F1::
 			}
     		}
 		send {3 up}
-
-
-Loop, 
-{
-
 		send {4}
 		sleep (100) 
 		send {4}
@@ -61,7 +57,7 @@ Loop,
 		
 
 		send {3 down}
- 		Loop, 16
+ 		Loop, 8
     		{
         		sleep 100
 			if ($stop)
@@ -120,109 +116,6 @@ Loop,
 			return
 		}
 	}
-	Loop, 19
-	{
-		;send 1
-		Loop, 10
-		{
-			sleep 100
-			if ($stop)
-			{
-				return
-			}
-		}
-	}
-	;send {Numpad2}
-	if ($ocu)
-	{
-		send {RButton down}
-	 	Loop, 16 ;26
-	    	{
-	        	sleep 100
-			send {1}
-			if ($stop)
-			{
-				send {RButton up}
-				return
-			}
-	    	}
-		send {RButton up}
-		sleep 36
-		send {1 down}
-		sleep 100
-		send {1 up}
-		send {3 down}
- 		Loop, 14
-    		{
-        		sleep 100
-			if ($stop)
-			{
-				send {3 up}
-				return
-			}
-    		}
-		sleep 100
-		send {3 up}
-		send {2 down}
-		sleep 100
-		send {2 up}
-		send {3 down}
-
- 		Loop, 8
-    		{
-        		sleep 100
-			if ($stop)
-			{
-				send {3 up}
-				return
-			}
-    		}
-		send {3 up}
-		sleep 133-46
-
-		send {RButton down}
-	 	Loop, 5 
-	    	{
-	        	sleep 100
-			if ($stop)
-			{
-				send {RButton up}
-				return
-			}
-	    	}
-		sleep (120+46) 
-		send {RButton up}
-		sleep 11
-	
-	}
-	else {
-		return
-		send {RButton down}
-	 	Loop, 47
-	    	{
-	        	sleep 100
-			send {1}
-			if ($stop)
-			{
-				send {RButton up}
-				return
-			}
-	    	}
-		send {RButton up}
-
-		Loop, 3
-		{
-			sleep 100
-			if ($stop)
-			{
-				return
-			}
-
-		}
-		sleep 100
-	}
-	;$ocu := 0
-}
 
 return
 
